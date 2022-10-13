@@ -4,9 +4,10 @@
 
     --color-theme: #ff7373;
     --color-white: #ffffff;
-    --color-gray-1: #f5f5f5;
-    --color-gray-2: #bebebe;
-    --color-gray-3: #616365;
+    --color-gray-1: #f5f5f5; 
+    --color-gray-2: #e6e6e6;
+    --color-gray-3: #bebebe;
+    --color-gray-4: #616365;
     --color-dark-1: #222529;
     --color-dark-2: #23262a;
     
@@ -16,7 +17,7 @@
     --font-weight-semi-bold: 600;
     --font-weight-extra-bold: 800;
 
-    --font-size-11: 0.6875;
+    --font-size-11: 0.6875rem;
     --font-size-13: 0.8125rem;
     --font-size-14: 0.875rem;
     --font-size-16: 1rem;
@@ -24,7 +25,13 @@
     --font-size-20: 1.25rem;
     --font-size-45: 2.8125rem;
     --font-size-60: 3.75rem;
+    --font-size-65: 4.0625rem;
 
+/* Jag följde Fixxo-mallen innan Hans lade ut instruktionsvideon
+så alla storlekar är baserade på den, även fast Hans hade andra 
+storlekar. */
+
+    --max-width: 1920px;
 }
 /* general */
 
@@ -35,71 +42,256 @@ html, body {
     width: 1920px;
 }
 
+a {
+    color: var(--color-dark-1);
+    text-decoration: none;
+}
+    a:hover {
+        color: var(--color-theme);
+        text-decoration: underline;
+    }
+
+@media (min-width: 1600px) {
+    .top-menu {
+        max-width: var(--max-width);
+    }
+}
+
+
+/* buttons */
+
+.btn-red {
+    background-color: var(--color-theme);
+    color: var(--color-white);
+    font-weight: var(--font-weight-semi-bold);
+    font-size: var(--font-size-16);
+    position: relative;
+    border: none;
+    height: 60px;
+    width: 180px;
+    transition: 0.2s ease-in-out;
+    
+}
+    .btn-red:hover {
+        background-color: var(--color-gray-4);
+    }
+
+    .btn-red .corner-left {
+        box-shadow: -2px -2px 0px #ffffff;
+        position: absolute;
+        height: 20px;
+        width: 20px;
+        margin-left: 0.4rem;
+        margin-top: -0.4rem;
+    }
+    .btn-red .corner-right {
+        box-shadow: 2px 2px 0px #ffffff;
+        position: absolute;
+        height: 20px;
+        width: 20px;
+        margin-left: 8.9rem;
+        margin-top: -0.9rem;
+    }
+
+/* white-dot links */
+
+.white-dot {
+background-color: var(--color-white);
+box-shadow: 0px 0px 10px 0px var(--color-gray-2);
+height: 35px;
+width: 35px;
+margin: 0.7rem;
+border-radius: 50%;    
+}
+    .white-dot:hover {
+        background-color: var(--color-dark-2);
+    }
+        .white-dot:hover a {
+            color: var(--color-white);
+        }
+
+        .white-dot a {
+            position: absolute;
+            color: var(--color-dark-1);
+            margin-top: 0.375rem;
+            margin-left: 0.6rem; 
+            
+        }
+        
 /* top-menu */
+
 .top-menu {
-    height: 50px;
-    width: 1680px;
+    background-color: var(--color-gray-1);
     margin: auto;
-    padding-top: 4rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 1.875rem 7.5rem 2.5rem 7.5rem;  
 }
 
     .top-menu .menu-links {
-        width: auto;
         height: 30px;
         margin-top: 0.625rem;
+        margin-left: 9.5rem;
         display: flex;
         justify-content: center;
         align-items: center;
     }
-        .top-menu .menu-links .links a {
-            color: var(--color-dark-1);
-            font-weight: var(--font-weight-medium);
-            font-size: var(--font-size-16);
-            text-decoration: none;
-            margin: 1rem;
+        .top-menu .menu-links a {
+            font-weight: var(--font-weight-semi-bold);
+            margin: 1rem;   
         }
-            .top-menu .menu-links .links a:hover {
-                color: var(--color-theme);
+            .top-menu .menu-links a:hover {
+                text-decoration: none; 
             }
+
+
     .top-menu .options {
-        display: flex;
-        size: auto;
+    display: flex;
+    size: auto;
     }
-        .top-menu .options a {
-            color: var(--color-dark-1);
-            position: absolute;
-            margin-top: 6px;
-            margin-left: 10px;
-        }
-            .top-menu .options a:hover {
-                color: var(--color-theme);
-            }
-        .top-menu .options .white-dot {
-            background-color: var(--color-white);
-            border-radius: 50%;
-            margin: 0.7rem;
-            height: 35px;
-            width: 35px;
-            box-shadow: 0px 0px 10px 0px var(--color-gray-2);
-        }
+        
         .top-menu .options .red-dot {
             background-color: var(--color-theme);
             position: absolute;
-            border-radius: 50%;
             height: 17px;
-            width: 17px;
-            margin-left: 1.6rem;
-            margin-bottom: 1.6rem;
+            width: 17px; 
+            margin-left: 1.1rem;
+            margin-top: -0.5rem;
+            
+            border-radius: 50%; 
         }
             .top-menu .options .red-dot h1 {
                 color: var(--color-white);
-                font-size: 0.6875rem;
+                font-size: var(--font-size-11);
+                margin-top: 0.15rem;
                 display: flex;
                 justify-content: center;
-                margin-top: 0.15rem;
             }
+
+
+/* showcase-1 */
+
+.showcase-1 {
+    background-color: var(--color-gray-1);
+    display: flex;
+    justify-content: space-between;
+}
+
+    .showcase-1 .sale-50 {
+        width: 700px;
+        margin-top:230px;
+    }
+        .showcase-1 .sale-50 h1 {
+            font-size: var(--font-size-65);
+            font-weight: var(--font-weight-extra-bold);
+            text-align: center;
+        }
+        .showcase-1 .sale-50 p {
+            font-size: var(--font-size-20);
+            text-align: center;
+            margin-top: 50px;
+        }
+
+    .showcase-1 .sale-50 .btn-red {
+        margin-top: 4rem;
+        margin-left: 14.3rem;
+    }
+
+/* featured-products */
+
+    .featured-products .container {
+        text-align: center;
+        font-weight: var(--font-weight-extra-bold);
+        margin-top: 10rem;
+        margin-left: 21rem;
+    }
+    .card {
+        border: none;
+    }
+        .card .img, 
+        .card .img {
+            height: 210px;
+            width: 255px;
+            background-color: var(--color-gray-1);
+        }
+
+        .card .card-body {
+            width: 255px;
+            text-align: center;
+            margin-bottom: -2rem;
+            letter-spacing: 0.1rem;
+        }
+        .card .card-body .card-category {
+            margin-top: -0.4rem;
+            font-size: var(--font-size-13);
+            font-weight: var(--font-weight-medium);
+            color: var(--color-gray-4);
+        }
+        .card .card-body .card-title {
+            margin-top: -0.6rem;
+            font-size: var(--font-size-16);
+            font-weight: var(--font-weight-semi-bold);
+        }
+        .card .card-body .card-rating {
+            margin-top: -0.2rem;
+            color: var(--color-theme);
+            text-align: center;
+        }
+
+        .card .card-body .card-price {
+            margin-top: -0.7rem;
+            display: flex;
+            justify-content: center;
+        }
+            .card .card-body .card-new-price {
+                font-size: var(--font-size-18);
+                font-weight: var(--font-weight-semi-bold)
+            }
+            .card .card-body .card-old-price { 
+                font-weight: var(--font-weight-regular);
+                color: var(--color-gray-4);
+                text-decoration: line-through;
+                margin-right: 0.5rem;
+                margin-top: 0.05rem;
+            }
+    
+    .card:hover {
+        /* fixa hover */
+    }
+
+.card .card-menu {
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    margin-top: -12rem;
+    margin-left: 13.3rem; 
+}
+    .card .card-menu .white-dot{
+        margin: 0.3rem;
+    }
+        .card .card-menu .white-dot a{
+            margin-left: -0.5rem;
+        }
+
+.card .btn-red {
+    position: absolute;
+    height: 50px;
+    width: 255px;
+    font-weight: var(--font-weight-regular);
+    font-size: var(--font-size-14);
+    bottom: 7.2rem;
+    margin-left: -16rem;
+}
+    .card .btn-red .corner-right {
+        margin-left: 13.5rem;
+        margin-top: -1.1rem;
+    }
+    .card .btn-red .corner-left {
+        margin-top: 0.001rem;
+    }
+
+   
 
 
